@@ -18,7 +18,7 @@ A new flutter plugin project.
   s.dependency 'Flutter'
   s.dependency 'GoogleMLKit/PoseDetection', '2.3.0'
   s.dependency 'GoogleMLKit/PoseDetectionAccurate', '2.3.0'
-  s.dependency 'GoogleMLKit/SegmentationSelfie', '2.3.0'
+#   s.dependency 'GoogleMLKit/SegmentationSelfie', '2.3.0'
   s.platform = :ios, '10.0'
 
   # Flutter.framework does not contain a i386 slice.
