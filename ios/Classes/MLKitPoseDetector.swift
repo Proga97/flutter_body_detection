@@ -4,17 +4,17 @@ import MLKitVision
 import MLKitCommon
 import MLKitPoseDetectionCommon
 import MLKitPoseDetection
-import MLKitPoseDetectionAccurate
+// import MLKitPoseDetectionAccurate
 
 class MLKitPoseDetector {
     private let poseDetector: PoseDetector
     private var isWorking = false
     
     init(stream: Bool) {
-        let options = AccuratePoseDetectorOptions()
-        if stream {
-            options.detectorMode = .stream
-        }
+//         let options = AccuratePoseDetectorOptions()
+//         if stream {
+//             options.detectorMode = .stream
+//         }
         options.detectorMode = .singleImage
         self.poseDetector = PoseDetector.poseDetector(options: options)
     }
