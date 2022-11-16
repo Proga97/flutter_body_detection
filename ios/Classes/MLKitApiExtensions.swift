@@ -2,7 +2,7 @@ import Foundation
 import MLKitPoseDetectionCommon
 import MLKitVision
 import MLKitCommon
-import MLKitSegmentationCommon
+// import MLKitSegmentationCommon
 
 // MARK: - Pose-related extensions
 
@@ -68,35 +68,35 @@ extension PoseLandmarkType {
 
 // MARK: - Segmentation mask-related extensions
 
-extension SegmentationMask {
-    func toMap() -> Dictionary<String, Any> {
-        let maskWidth = CVPixelBufferGetWidth(self.buffer)
-        let maskHeight = CVPixelBufferGetHeight(self.buffer)
+// extension SegmentationMask {
+//     func toMap() -> Dictionary<String, Any> {
+//         let maskWidth = CVPixelBufferGetWidth(self.buffer)
+//         let maskHeight = CVPixelBufferGetHeight(self.buffer)
 
-        CVPixelBufferLockBaseAddress(self.buffer, CVPixelBufferLockFlags.readOnly)
-        let maskBytesPerRow = CVPixelBufferGetBytesPerRow(self.buffer)
-        var maskAddress =
-            CVPixelBufferGetBaseAddress(self.buffer)!.bindMemory(
-                to: Float32.self, capacity: maskBytesPerRow * maskHeight)
+//         CVPixelBufferLockBaseAddress(self.buffer, CVPixelBufferLockFlags.readOnly)
+//         let maskBytesPerRow = CVPixelBufferGetBytesPerRow(self.buffer)
+//         var maskAddress =
+//             CVPixelBufferGetBaseAddress(self.buffer)!.bindMemory(
+//                 to: Float32.self, capacity: maskBytesPerRow * maskHeight)
 
-        var floatArray: [Double] = []
-        for _ in 0...(maskHeight - 1) {
-          for col in 0...(maskWidth - 1) {
-            // Gets the confidence of the pixel in the mask being in the foreground.
-            let foregroundConfidence: Float32 = maskAddress[col]
-            floatArray.append(Double(foregroundConfidence))
-          }
-          maskAddress += maskBytesPerRow / MemoryLayout<Float32>.size
-        }
-        let data = Data(bytes: &floatArray, count: floatArray.count * MemoryLayout<Double>.stride)
+//         var floatArray: [Double] = []
+//         for _ in 0...(maskHeight - 1) {
+//           for col in 0...(maskWidth - 1) {
+//             // Gets the confidence of the pixel in the mask being in the foreground.
+//             let foregroundConfidence: Float32 = maskAddress[col]
+//             floatArray.append(Double(foregroundConfidence))
+//           }
+//           maskAddress += maskBytesPerRow / MemoryLayout<Float32>.size
+//         }
+//         let data = Data(bytes: &floatArray, count: floatArray.count * MemoryLayout<Double>.stride)
         
-        return [
-            "buffer": FlutterStandardTypedData(float64: data),
-            "width": maskWidth,
-            "height": maskHeight
-        ]
-    }
-}
+//         return [
+//             "buffer": FlutterStandardTypedData(float64: data),
+//             "width": maskWidth,
+//             "height": maskHeight
+//         ]
+//     }
+// }
 
 // MARK: - Other extensions
 
