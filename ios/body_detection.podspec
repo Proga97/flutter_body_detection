@@ -16,7 +16,7 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.static_framework = true
   s.dependency 'Flutter'
-  s.dependency 'GoogleMLKit/PoseDetection', '3.2.0'
+  s.dependency 'GoogleMLKit/PoseDetection', '2.3.0'
 #   s.dependency 'GoogleMLKit/PoseDetectionAccurate', '3.2.0'
 #   s.dependency 'GoogleMLKit/SegmentationSelfie', '2.3.0'
   s.platform = :ios, '10.0'
