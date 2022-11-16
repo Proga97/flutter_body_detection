@@ -17,6 +17,7 @@ A new flutter plugin project.
   s.static_framework = true
   s.dependency 'Flutter'
   s.dependency 'GoogleMLKit/PoseDetection', '2.3.0'
+  s.dependency 'GTMSessionFetcher', '2.1.0'
 #   s.dependency 'GoogleMLKit/PoseDetectionAccurate', '3.2.0'
 #   s.dependency 'GoogleMLKit/SegmentationSelfie', '2.3.0'
   s.platform = :ios, '10.0'
